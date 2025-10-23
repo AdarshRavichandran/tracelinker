@@ -1,0 +1,45 @@
+name: 'TraceLinker'
+description: 'Automatic issue-PR-file-test traceability for GitHub'
+author: 'TraceLinker Contributors'
+
+inputs:
+  github-token:
+    description: 'GitHub token for API access'
+    required: true
+  config-path:
+    description: 'Path to .tracelinker.yml config file'
+    required: false
+    default: '.tracelinker.yml'
+  comment-enabled:
+    description: 'Enable PR comments'
+    required: false
+    default: 'true'
+  enforce-issue-link:
+    description: 'Fail check if no issue link found'
+    required: false
+    default: 'false'
+  enforce-test-changes:
+    description: 'Fail check if no test files changed'
+    required: false
+    default: 'false'
+
+outputs:
+  summary:
+    description: 'Traceability summary JSON'
+  linked-issues:
+    description: 'Comma-separated list of linked issue numbers'
+  changed-files:
+    description: 'Comma-separated list of changed files'
+  test-files-changed:
+    description: 'Comma-separated list of changed test files'
+  status:
+    description: 'Overall status (success, warning, failure)'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'link'
+  color: 'blue'
+

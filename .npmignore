@@ -1,0 +1,37 @@
+# Development files
+src/
+tests/
+docs/
+.github/
+.vscode/
+.idea/
+
+# Configuration
+.eslintrc.json
+.prettierrc.json
+jest.config.js
+.tracelinker.yml
+
+# Build/test artifacts
+coverage/
+.nyc_output/
+
+# Documentation
+README.md
+CONTRIBUTING.md
+CHANGELOG.md
+
+# Git
+.git/
+.gitignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+

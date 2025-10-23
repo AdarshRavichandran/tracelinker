@@ -1,0 +1,50 @@
+# TraceLinker Configuration
+# This file is optional - TraceLinker works with sensible defaults
+
+version: 1
+
+# Issue link patterns to detect in PR title/body
+# Supports: Fixes #123, Closes #456, Resolves #789, etc.
+issue_patterns:
+  - "Fixes #"
+  - "Closes #"
+  - "Resolves #"
+  - "Fix #"
+  - "Close #"
+  - "Resolve #"
+
+# Test file patterns (glob format)
+# Files matching these patterns are considered "test files"
+test_patterns:
+  - "**/*.test.js"
+  - "**/*.spec.js"
+  - "**/*.test.ts"
+  - "**/*.spec.ts"
+  - "**/*.test.jsx"
+  - "**/*.spec.jsx"
+  - "**/*.test.tsx"
+  - "**/*.spec.tsx"
+  - "tests/**"
+  - "test/**"
+  - "__tests__/**"
+
+# PR comment settings
+comment:
+  # Enable/disable PR comments
+  enabled: true
+  
+  # Comment template: "default", "minimal", or "detailed"
+  # - default: Full summary with all details
+  # - minimal: One-liner status
+  # - detailed: Includes file-by-file breakdown
+  template: "default"
+
+# Enforcement rules
+# Set to true to fail PR checks if conditions not met
+
+# Fail if no issue link found
+enforce_issue_link: false
+
+# Fail if no test files changed
+enforce_test_changes: false
+
