@@ -23,7 +23,7 @@ function detectIssueLinks(title, body, patterns) {
   patternsToUse.forEach(pattern => {
     // Escape special regex characters in pattern
     const escapedPattern = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    
+
     // Create regex to find pattern followed by numbers
     const regex = new RegExp(escapedPattern + '(\\d+)', 'gi');
     let match;

@@ -1,8 +1,5 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const fs = require('fs');
-const path = require('path');
-const yaml = require('js-yaml');
 const { detectIssueLinks } = require('./detectors/issueDetector');
 const { getChangedFiles, getTestFiles } = require('./detectors/fileDetector');
 const { generateComment } = require('./generators/commentGenerator');

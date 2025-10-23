@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 const yaml = require('js-yaml');
 
 /**
@@ -43,7 +42,7 @@ async function loadConfig(configPath = '.tracelinker.yml') {
   try {
     // Check if config file exists
     if (!fs.existsSync(configPath)) {
-      console.log(`Config file not found at ${configPath}, using defaults`);
+      // Config file not found, using defaults
       return DEFAULT_CONFIG;
     }
 
@@ -63,7 +62,7 @@ async function loadConfig(configPath = '.tracelinker.yml') {
 
     return config;
   } catch (error) {
-    console.error(`Error loading config: ${error.message}`);
+    // Error loading config, using defaults
     return DEFAULT_CONFIG;
   }
 }
