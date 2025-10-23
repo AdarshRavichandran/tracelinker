@@ -23,17 +23,22 @@ describe('Comment Generator', () => {
 
   test('generates minimal comment', () => {
     const comment = generateComment(mockSummary, { template: 'minimal' });
-    expect(comment).toContain('🔗 TraceLinker');
+    expect(comment).toContain('🔗 **TraceLinker:**');
     expect(comment).toContain('✅ Issues linked (2)');
     expect(comment).toContain('✅ Tests updated (1)');
   });
 
   test('generates detailed comment', () => {
-    const comment = generateComment(mockSummary, { template: 'detailed' });
+    const detailedSummary = {
+      ...mockSummary,
+      changed_files: ['src/app.js', 'src/utils.js', 'config.js', 'src/app.test.js']
+    };
+    const comment = generateComment(detailedSummary, { template: 'detailed' });
     expect(comment).toContain('📊 File-by-File Breakdown');
     expect(comment).toContain('| File | Type |');
     expect(comment).toContain('🧪 Test');
     expect(comment).toContain('📝 Code');
+    expect(comment).toContain('src/app.test.js');
   });
 
   test('handles missing issue links', () => {

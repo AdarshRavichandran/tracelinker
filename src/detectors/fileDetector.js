@@ -1,4 +1,4 @@
-const minimatch = require('minimatch');
+const { minimatch } = require('minimatch');
 
 /**
  * Gets all changed files in a PR
